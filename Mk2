@@ -1,4 +1,4 @@
-    #include <PS2X_lib.h>  
+       #include <PS2X_lib.h>  
 
     int Switch_1A = 5;//Right Forward
     int Switch_2A = 4; //Right backward
@@ -17,25 +17,25 @@
         digitalWrite(Switch_4B,LOW);
     }
 
-    void Clockwise(){
+    void Forward(){
       digitalWrite(Switch_2A,HIGH);
       digitalWrite(Switch_4B,HIGH);
       digitalWrite(Switch_1A,LOW);
       digitalWrite(Switch_3B,LOW);
       }  
-      void Counter_Clockwise(){
+      void Backward(){
       digitalWrite(Switch_3B,HIGH);
       digitalWrite(Switch_1A,HIGH);
       digitalWrite(Switch_2A,LOW);
       digitalWrite(Switch_4B,LOW);
       }
-      void Forward(){
+      void Clockwise(){
       digitalWrite(Switch_1A,HIGH);
       digitalWrite(Switch_4B,HIGH);
       digitalWrite(Switch_2A,LOW);
       digitalWrite(Switch_3B,LOW);
       }
-      void Backward(){
+      void Counter_Clockwise(){
       digitalWrite(Switch_2A,HIGH);
       digitalWrite(Switch_3B,HIGH);
       digitalWrite(Switch_1A,LOW);
@@ -165,6 +165,9 @@
           Serial.print(",");
           Serial.println(ps2x.Analog(PSS_RX), DEC); 
       } 
+      if (!ps2x.Button(PSB_PAD_DOWN) && !ps2x.Button(PSB_PAD_UP) && !ps2x.Button(PSB_PAD_RIGHT) && !ps2x.Button(PSB_PAD_LEFT)) {
+        Stop();
+      }
     }
     delay(50);
     }
