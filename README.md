@@ -7,6 +7,7 @@ I used PS2X as my library for my controller so I can remotely control the arduin
 https://github.com/simondlevy/PS2X_lib/blob/master/PS2X_lib.h
 
 Key:
+  Mk1 is blind repeated movement using prebuilt functions/commands
   Mk2 is D-pad,
   Mk3 is Tankdrive (Joysticks)
   
